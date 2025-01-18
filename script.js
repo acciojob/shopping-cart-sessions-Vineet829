@@ -1,4 +1,3 @@
-// Sample product data
 const products = [
   { id: 1, name: "Product 1", price: 10 },
   { id: 2, name: "Product 2", price: 20 },
@@ -7,10 +6,9 @@ const products = [
   { id: 5, name: "Product 5", price: 50 },
 ];
 
-
 function renderProducts() {
   const productList = document.getElementById("product-list");
-  productList.innerHTML = ""; // Clear previous content
+  productList.innerHTML = "";
 
   products.forEach(product => {
     const li = document.createElement("li");
@@ -22,7 +20,6 @@ function renderProducts() {
     productList.appendChild(li);
   });
 }
-
 
 function renderCart() {
   const cartList = document.getElementById("cart-list");
@@ -41,7 +38,6 @@ function renderCart() {
   }
 }
 
-
 function addToCart(product) {
   let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
   cart.push(product);
@@ -49,20 +45,17 @@ function addToCart(product) {
   renderCart(); 
 }
 
-
 function clearCart() {
   sessionStorage.removeItem("cart");
   renderCart(); 
 }
 
-
 document.getElementById("clear-cart-btn").addEventListener("click", clearCart);
-
 
 function init() {
   renderProducts();
   renderCart(); 
 }
 
-
 init();
+
