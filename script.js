@@ -53,7 +53,8 @@ function clearCart() {
 document.getElementById("clear-cart-btn").addEventListener("click", clearCart);
 
 function init() {
-  renderProducts();
+   sessionStorage.removeItem("cart");
+	renderProducts();
   renderCart(); 
 }
 
