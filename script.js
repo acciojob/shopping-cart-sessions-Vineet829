@@ -27,9 +27,7 @@ function renderCart() {
 
   const cart = JSON.parse(sessionStorage.getItem("cart")) || [];
   
-  if (cart.length === 0) {
-    cartList.innerHTML = "<li>Your cart is empty</li>";
-  } else {
+  if (!cart.length === 0) {
     cart.forEach(item => {
       const li = document.createElement("li");
       li.textContent = `${item.name} - $${item.price}`;
@@ -53,7 +51,7 @@ function clearCart() {
 document.getElementById("clear-cart-btn").addEventListener("click", clearCart);
 
 function init() {
-   sessionStorage.removeItem("cart");
+   
 	renderProducts();
   renderCart(); 
 }
